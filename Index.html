@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+    body {
+    font-family: "Gill Sans", sans-serif;
+    /* background-color:black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: black;
+}
+
+.calculator {
+    width: 300px;
+    /* background-color: #fff;  */
+    background-color: rgba(97, 98, 104, 1);
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    /* background-color: 616268; */
+}
+
+td {
+    padding: 6px;
+    text-align: center;
+}
+
+button {
+    width: 100%;
+    padding: 3px;
+    margin-bottom: 6px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 2px 6px 0 1.5px rgb(217, 230, 243);
+    cursor: pointer;
+    background-color: white;
+    transition: background-color 0.3s ease;
+    font-size: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+/* button:hover {
+    background-color: #ccc;
+} */
+
+input[type="text"] {
+    width: calc(100% - 9px);
+    padding: 15px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    margin-left: 5px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 35px;
+    box-sizing: border-box;
+    text-align: right;
+    background-color:rgba(208, 214, 225, 1);
+    box-shadow: 0.5px 10px 0px 0.5px rgb(177, 189, 202);
+}
+
+.equalsBtn {
+    background-color: rgba(248, 151, 52, 1);
+    box-shadow: 2px 6px 0 1.5px rgba(223, 131, 57, 1);
+   /* font-size: 30px;*/
+}
+</style>
+</head>
+<body>
+
+<div class="calculator">
+    <input type="text" id="output" readonly>
+    <table>
+        <tr>
+            <td><button onclick="appendToOutput('7')">7</button></td>
+            <td><button onclick="appendToOutput('8')">8</button></td>
+            <td><button onclick="appendToOutput('9')">9</button></td>
+            <td><button class="operator" onclick="appendToOutput('÷')">÷</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="appendToOutput('4')">4</button></td>
+            <td><button onclick="appendToOutput('5')">5</button></td>
+            <td><button onclick="appendToOutput('6')">6</button></td>
+            <td><button class="operator" onclick="appendToOutput('×')">×</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="appendToOutput('1')">1</button></td>
+            <td><button onclick="appendToOutput('2')">2</button></td>
+            <td><button onclick="appendToOutput('3')">3</button></td>
+            <td><button class="operator" onclick="appendToOutput('-')">-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="appendToOutput('0')">0</button></td>
+            <td><button onclick="appendToOutput('.')">.</button></td>
+            <td><button class="operator" onclick="appendToOutput('+')">+</button></td>
+            <td><button onclick="calculate()" class="equalsBtn">=</button></td>
+        </tr>
+    </table>
+</div>
+
+<script>
+function appendToOutput(value) {
+    document.getElementById("output").value += value;
+}
+
+function clearOutput() {
+    document.getElementById("output").value = '';
+}
+
+function calculate() {
+    var expression = document.getElementById("output").value;
+    var result;
+    try {
+        expression = expression.replace(/÷/g, '/').replace(/×/g, '*');
+        result = eval(expression);
+        if (!isFinite(result) || isNaN(result)) {
+            throw new Error('Invalid Expression');
+        }
+        document.getElementById("output").value = result;
+    } catch (error) {
+        document.getElementById("output").value = 'Error';
+    }
+}
+</script>
+</body>
+</html>
