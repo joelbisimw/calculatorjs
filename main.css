@@ -1,0 +1,162 @@
+body {
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    src: url(https://fonts.google.com/specimen/Raleway)
+}
+.container{
+    display: inline-block;
+    padding: 40px;
+}
+
+.left {
+    float: left;
+    width: 50%;
+    margin-top: 50px;
+}
+
+.right {
+    float: right;
+    width: 50%;
+}
+
+img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.nav {
+    display: flex;
+}
+
+.n-left {
+    float: left;
+    width: 80%;
+}
+
+.n-left-el {
+    margin-right: 30px;
+}
+
+.n-right {
+    float: right;
+    width: 20%;
+    /* border-color: aquamarine;
+    border-width: 2px; */
+}
+
+#myImageM {
+    display: none;
+}
+
+.btn-view {
+    margin-top: 20px;
+}
+
+#free {
+    display: inline-block;
+    text-align: center;
+    width: 50px;
+    height: 20px;
+    background-color: hsl(240, 84%, 93%);
+    border-radius: 15px;
+    font-weight: bold;
+    color:blueviolet;
+}
+
+.btn-challenge {
+    background-color: rgba(237, 44, 73, 1);
+    /* padding: 20px; */
+    width: 250px;
+    height: 45px;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.two {
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+    height: 20px;
+    background-color: hsl(145, 69%, 53%);
+    border-radius: 6px 0 0 6px;
+    color: white;
+    margin-right: 0;
+}
+
+.txt {
+    display: inline-block;
+    text-align: center;
+    width: 70px;
+    height: 20px;
+    border: 1px solid hsl(145, 69%, 53%);
+    color: hsl(145, 69%, 53%);
+    border-radius: 0 6px 6px 0;
+    margin-left: 0;
+}
+
+.btn-challenge:hover {
+    background-color: brown;
+}
+
+@media (max-width: 767px){
+    .container {
+        display: block;
+    }
+
+    .right {
+        float: none;
+        width: 100%;
+    }
+
+    .left {
+        float: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 1440px) {
+
+}
+
+#html{
+       color:cadetblue;
+       font-weight: bold;
+}
+
+#css{
+       color: blue;
+       font-weight: bold;
+}
+
+#desktop-design{
+                 width: 150px;
+                 height: 25px;
+                 background-color: rgba(16, 16, 238, 0.747);
+                 border-radius: 100px;
+                 color: white;
+                 border: none;
+                 font-style: italic;
+                 font-weight: bolder;
+}
+
+#mobile-design{
+                 width: 150px;
+                 height: 25px;
+                 background-color:darkgray;
+                 border-radius: 100px;
+                 color: white;
+                 border: none;
+                 font-style: italic;
+                 font-weight: bolder;
+}
+
+#mobile-design:hover{
+                       background-color:indigo;
+}
+
+#desktop-design:hover{
+    background-color:blue;
+}
