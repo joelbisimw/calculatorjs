@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Frontend Mentor | Fylo landing page with two column layout</title>
+    <script>
+        function showImage(imageId) {
+            // Hide all images
+            var images = document.getElementsByClassName('myImage');
+            for (var i = 0; i < images.length; i++) {
+                images[i].style.display = 'none';
+            }
+            // Show the selected image
+            document.getElementById(imageId).style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!--left column-->
+        <div class="left">
+            <div class="nav">
+                <div class="n-left">
+                    <span class="n-left-el" id="free">FREE</span>
+                    <span class="n-left-el" id="html">HTML</span>
+                    <span class="n-left-el" id="css">CSS</span>
+                </div>
+                <div class="n-right">
+                    <span class="two">2</span>
+                    <span class="txt">JUNIOR</span>
+                </div>                
+            </div>
+
+            <div class="bottom">
+                <h2>Fylo landing page with two column layout</h2>
+                <p>This project is great if you're starting to get confident with slightly more complex layouts. The second section with the testimonial area will provide a nice challenge.</p>
+                <button class="btn-challenge">START CHALLENGE</button>
+            </div>
+        </div>
+
+        <!--right column-->
+        <div class="right">
+            <div class="myImage" id="myImageD">
+                <img src="./desktop-preview.jpg">
+            </div>
+            <div class="myImage" id="myImageM">
+                <img src="./mobile-preview.jpg">
+            </div>
+            <div class="btn-view">
+                <button onclick="showImage('myImageD')" id="desk">DESKTOP DESIGN</button>
+                <button onclick="showImage('myImageM')" id="mobile">MOBILE DESIGN</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
